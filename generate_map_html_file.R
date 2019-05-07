@@ -11,7 +11,10 @@ my.path = '/Users/mikejohnson/Desktop/W12_test/assignment.csv'
 
 df = read.csv(my.path)
 
-popup = paste0('<a href=', df$url, '> <h1><strong>', df$Name, "</strong></h1></a><br>", df$Des, '<br><br><img src="', df$image, '" height="300px" width="300px"/>')
+popup <- paste("<div class='leaflet-popup-scrolled' style='max-width:600px;max-height:300px'><b>",
+               '<a href=', df$url, ' target="_blank"> <h2 align="center"><strong>', df$Name, "</strong></h2></a><br>",
+               "</b>", df$Des, '<br><br><center><img src="', df$image, '" height="150px" width="200px" border="8"></center><br> </div>')
+
 
 map = leaflet() %>%
     addTiles( ) %>%
